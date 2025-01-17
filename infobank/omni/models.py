@@ -271,7 +271,43 @@ class FriendTalkAttachMent(RequsetMessage):
     commerce :Optional[FriendTalkAttachMentCommerce]
     video :Optional[FriendTalkAttachMentVideo]
 
-    
+class FriendTalkCarouselHead(RequsetMessage):
+    header :str = Field(
+        max_length=20
+    )
+    content :str = Field(
+        max_length=50
+    )
+    image_url :Optional[str]
+    url_mobile :Optional[str]
+    url_pc :Optional[str]
+    scheme_android :Optional[str]
+    scheme_ios: Optional[str]
+
+
+class FriendTalkCarouselList(RequsetMessage):
+    header :Optional[str] = Field(
+        max_length=20
+    )
+    message :Optional[str] = Field(
+        max_length=180
+    )
+    additional_content :Optional[str] = Field(
+        max_length=34
+    )
+    attachment :Optional[FriendTalkAttachMent]
+
+class FriendTalkCarouselTail(RequsetMessage):
+    url_pc :Optional[str]
+    url_mobile :str
+    scheme_ios :Optional[str]
+    scheme_android :Optional[str]
+
+class FriendTalkCarousel(RequsetMessage):
+    head :Optional[FriendTalkCarouselHead]
+    list :List[FriendTalkCarouselList]
+    tail :Optional[FriendTalkCarouselTail]
+
 class FriendTalkMessage(_FriendTalkMessage):
     """통합 발송 MessageFlow 친구톡는 아래 페이지에서 확인 가능합니다.
 
@@ -279,7 +315,7 @@ class FriendTalkMessage(_FriendTalkMessage):
     """
     text :Optional[str]
     header :Optional[str]
-    carousel :Optional[dict]
+    carousel :Optional[FriendTalkCarousel]
     attachment :Optional[FriendTalkAttachMent]
     ad_flag :Optional[Literal['Y','N']] = Field(
         description="This field can only be 'Y' or 'N'"

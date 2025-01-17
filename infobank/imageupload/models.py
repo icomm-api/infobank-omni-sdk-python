@@ -21,6 +21,11 @@ class ImageServiceType(str, Enum):
     FRIENDTALK= "FRIENDTALK"
 class ImageMessageType(str, Enum):
     FI = "FI"
+    FW = "FW"
+    FL = "FL"
+    FC = "FC"
+    FA = "FA"
+
 class Data(CamelCaseModel):
     file_key :str = Field(
         alias='fileKey',
@@ -45,7 +50,7 @@ class ResponseApi(_ResponseApi):
 class ImageFile(RequsetMessage):
     """이미지 파일 업로드는 아래 페이지에서 확인 가능합니다. 
 
-    https://infobank-guide.gitbook.io/omni_api/api-reference/registration/file#request
+    https://infobank-guide.gitbook.io/omni_api/api-reference/management/file#request
     """
     service_type :ImageServiceType
     message_type :ImageMessageType = Field(

@@ -240,11 +240,11 @@ class InfobankClient:
     ) -> ImageResponse:
         """이미지 업로드는 아래 페이지에서 확인 가능합니다.
         
-        https://infobank-guide.gitbook.io/omni_api/api-reference/registration/file
+        https://infobank-guide.gitbook.io/omni_api/api-reference/management/file
         
         응답 결과 json 포맷은 아래 페이지에서 확인 가능합니다.
         
-        https://infobank-guide.gitbook.io/omni_api/api-reference/registration/file#response
+        https://infobank-guide.gitbook.io/omni_api/api-reference/management/file#response
         
         Args:
             message (ImageFile): 
@@ -347,7 +347,7 @@ class InfobankClient:
     )->MessageFormResponse :
         """메시지 폼 등록는 아래 페이지에서 확인 가능합니다.
         
-        https://infobank-guide.gitbook.io/omni_api/api-reference/registration/form#post
+        https://infobank-guide.gitbook.io/omni_api/api-reference/management/form#post
         
         Args:
             message (MessageFormMessage): 
@@ -373,11 +373,11 @@ class InfobankClient:
     )->MessageFormResponse:
         """메시지 폼 수정는 아래 페이지에서 확인 가능합니다.
         
-        https://infobank-guide.gitbook.io/omni_api/api-reference/registration/form#put
+        https://infobank-guide.gitbook.io/omni_api/api-reference/management/form#put
 
         응답 결과 json 포맷은 아래 페이지에서 확인 가능합니다.
         
-        https://infobank-guide.gitbook.io/omni_api/api-reference/registration/form#response
+        https://infobank-guide.gitbook.io/omni_api/api-reference/management/form#response
         
         Args:
             form_id (str): 폼 아이디
@@ -412,7 +412,7 @@ class InfobankClient:
     )->MessageFormResponse:
         """메시지 폼 삭제는 아래 페이지에서 확인 가능합니다.
         
-        https://infobank-guide.gitbook.io/omni_api/api-reference/registration/form#delete
+        https://infobank-guide.gitbook.io/omni_api/api-reference/management/form#delete
 
         Args:
             form_id (str): 폼 아이디

@@ -228,7 +228,7 @@ class MessageForm(RequsetMessage):
     ):
         """메시지 폼 등록 MessageFlow는 아래 페이지에서 확인 가능합니다.
 
-        https://infobank-guide.gitbook.io/omni_api/api-reference/registration/form#messageform
+        https://infobank-guide.gitbook.io/omni_api/api-reference/management/form#messageform
 
         Args:
             sms (Optional[SMSMessage], optional): SMS 메시지 정보. Defaults to None.\n
