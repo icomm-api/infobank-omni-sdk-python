@@ -1,0 +1,8 @@
+__pycache__
+.vscode/
+example/
+.pytest_cache/
+build/
+dist/
+infobank_omni_sdk_python.egg-info/
+*.swp
