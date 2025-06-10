@@ -7,7 +7,8 @@ from infobank.core.models import (
 )
 from infobank.imageupload.models import (
     ImageServiceType,
-    ImageMessageType
+    ImageMessageType,
+    ImageSubType
 )
 
 API_VERSION='/v1'
@@ -32,6 +33,7 @@ class ImageFileChannel(_Channel):
         self,
         service_type :ImageServiceType,
         message_type : ImageMessageType,
+        sub_type : ImageSubType,
         files,
         timeout : int
         ) -> requests.Response:
@@ -44,6 +46,9 @@ class ImageFileChannel(_Channel):
         if message_type != None and len(message_type) > 0:
             uri = uri + '/%s' %(message_type.value)
         
+        if sub_type != None and len(sub_type) >0:
+            uri = uri + '/%s' %(sub_type.value)
+            
         headers = self.headers.dict(
             by_alias=True,
             exclude_none=True

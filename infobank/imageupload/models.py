@@ -19,13 +19,21 @@ class ImageServiceType(str, Enum):
     MMS = "MMS"
     RCS = "RCS"
     FRIENDTALK= "FRIENDTALK"
+    BRANDMESSAGE="BRANDMESSAGE"
 class ImageMessageType(str, Enum):
     FI = "FI"
     FW = "FW"
     FL = "FL"
     FC = "FC"
     FA = "FA"
-
+    defalut = "defalut"
+    wide = "wide"
+    wideItemList = "wideItemList"
+    carouselFeed = "carouselFeed"
+    carouselCommerce ="carouselCommerce"
+    
+class ImageSubType(str, Enum):
+    first= "first"
 class Data(CamelCaseModel):
     file_key :str = Field(
         alias='fileKey',
@@ -54,6 +62,9 @@ class ImageFile(RequsetMessage):
     """
     service_type :ImageServiceType
     message_type :ImageMessageType = Field(
+        default=None
+    )
+    sub_type: ImageSubType = Field(
         default=None
     )
     file_path: str
