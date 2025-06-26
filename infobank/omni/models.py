@@ -415,7 +415,7 @@ class BrandMessage(_BrandMessage):
     message_variable :Optional[dict]
     button_variable :Optional[dict]
     coupon_variable: Optional[dict]
-    image_variable: Optional[dict]
+    image_variable: Optional[list]
     video_variable: Optional[dict]
     commerce_variable: Optional[dict]
     carousel_variable: Optional[dict]
